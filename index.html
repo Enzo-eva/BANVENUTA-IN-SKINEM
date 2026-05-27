@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Skinem · Le proposte del mese</title>
+<title>Skinem · Beauty Technology — Le proposte del mese</title>
+<meta name="description" content="Skinem Beauty Technology · Lipolaser, cosmetici e tecnologie per il centro estetico professionale. Made in Italy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
@@ -36,14 +37,13 @@
 
   /* TOP BAR */
   .topbar {
-    background: white;
+    background: rgba(255,255,255,0.95);
     border-bottom: 1px solid var(--warm-border);
     padding: 1rem 1.5rem;
     position: sticky;
     top: 0;
     z-index: 10;
     backdrop-filter: blur(8px);
-    background: rgba(255,255,255,0.95);
   }
   .topbar-inner {
     max-width: 1100px;
@@ -64,26 +64,44 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
+  .made-in-italy {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+  }
+  .flag {
+    display: inline-flex;
+    gap: 1px;
+  }
+  .flag span {
+    display: inline-block;
+    width: 8px;
+    height: 4px;
+  }
+  .flag .green { background: #009246; }
+  .flag .white { background: #f1f2f1; }
+  .flag .red { background: #ce2b37; }
 
   /* HERO */
   .hero {
     position: relative;
-    min-height: 520px;
     background: linear-gradient(135deg, #f4f1ea 0%, #ebe6dc 100%);
     overflow: hidden;
   }
   .hero-inner {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 4rem 1.5rem;
+    padding: 4.5rem 1.5rem 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 3.5rem;
     align-items: center;
   }
-  .hero-text {
-    z-index: 2;
-  }
+  .hero-text { z-index: 2; }
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -93,7 +111,7 @@
     letter-spacing: 1.5px;
     color: var(--brand-cyan-dark);
     font-weight: 500;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
   .hero-eyebrow::before {
     content: '';
@@ -102,12 +120,12 @@
     background: var(--brand-cyan);
   }
   .hero-title {
-    font-size: 48px;
-    line-height: 1.1;
+    font-size: 52px;
+    line-height: 1.05;
     font-weight: 400;
     color: var(--text-primary);
-    margin-bottom: 1.25rem;
-    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.8px;
   }
   .hero-title em {
     font-style: italic;
@@ -118,10 +136,11 @@
     color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: 2rem;
-    max-width: 460px;
+    max-width: 480px;
   }
   .hero-meta {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1.5rem;
     font-size: 13px;
@@ -137,9 +156,9 @@
     color: var(--brand-cyan);
   }
   .hero-image {
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 30px 60px -20px rgba(45, 42, 38, 0.25);
+    box-shadow: 0 35px 70px -25px rgba(45, 42, 38, 0.3);
     aspect-ratio: 4/3;
     background: #f5f5f5;
   }
@@ -157,16 +176,18 @@
     padding: 0 1.5rem;
   }
 
-  /* INTRO PARAGRAPH */
-  .intro {
-    padding: 5rem 1.5rem 3rem;
+  /* PROMISE BANNER */
+  .promise {
+    background: white;
+    padding: 4rem 1.5rem;
     text-align: center;
+    border-bottom: 1px solid var(--warm-border);
   }
-  .intro-inner {
-    max-width: 720px;
+  .promise-inner {
+    max-width: 780px;
     margin: 0 auto;
   }
-  .intro-label {
+  .promise-eyebrow {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -174,57 +195,57 @@
     font-weight: 500;
     margin-bottom: 1rem;
   }
-  .intro-text {
-    font-size: 22px;
-    line-height: 1.5;
+  .promise-claim {
+    font-size: 32px;
+    line-height: 1.25;
     color: var(--text-primary);
-    font-weight: 300;
-    letter-spacing: -0.2px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
   }
-  .intro-text strong {
+  .promise-claim strong {
     font-weight: 500;
     color: var(--brand-cyan-dark);
   }
 
-  /* SECTION TITLES */
+  /* SECTION */
   .section {
-    padding: 4rem 1.5rem;
+    padding: 5rem 1.5rem 4rem;
   }
   .section-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
   .section-eyebrow {
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     color: var(--brand-cyan-dark);
     font-weight: 500;
     margin-bottom: 0.75rem;
   }
   .section-title {
-    font-size: 36px;
+    font-size: 42px;
     font-weight: 400;
     color: var(--text-primary);
-    letter-spacing: -0.5px;
-    line-height: 1.2;
+    letter-spacing: -0.6px;
+    line-height: 1.15;
   }
   .section-subtitle {
-    font-size: 16px;
+    font-size: 17px;
     color: var(--text-secondary);
-    margin-top: 0.75rem;
-    max-width: 560px;
+    margin-top: 1rem;
+    max-width: 580px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  /* REPO LASER FEATURE */
+  /* LIPOLASER FEATURE */
   .feature {
     background: white;
-    border-radius: 20px;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 20px 50px -25px rgba(45, 42, 38, 0.15);
-    margin-bottom: 3rem;
+    box-shadow: 0 25px 60px -30px rgba(45, 42, 38, 0.18);
+    margin-bottom: 1.5rem;
   }
   .feature-grid {
     display: grid;
@@ -260,49 +281,115 @@
     margin-bottom: 1.25rem;
     align-self: flex-start;
   }
+  .feature-headline {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-tertiary);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
   .feature-title {
     font-size: 38px;
     font-weight: 400;
     line-height: 1.1;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     letter-spacing: -0.5px;
+  }
+  .feature-title em {
+    font-style: italic;
+    color: var(--brand-cyan-dark);
   }
   .feature-desc {
     font-size: 15px;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.75;
     margin-bottom: 2rem;
   }
-  .feature-points {
+
+  /* BENEFITS LIST */
+  .benefits {
     list-style: none;
     margin-bottom: 0;
   }
-  .feature-points li {
+  .benefits li {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
-    padding: 10px 0;
+    padding: 12px 0;
     border-top: 1px solid var(--warm-border);
     font-size: 14px;
     color: var(--text-primary);
+    font-weight: 500;
   }
-  .feature-points li:last-child {
+  .benefits li:last-child {
     border-bottom: 1px solid var(--warm-border);
   }
-  .feature-points i {
+  .benefits i {
     color: var(--brand-cyan);
     font-size: 18px;
     flex-shrink: 0;
-    margin-top: 2px;
   }
-  .feature-points strong {
+
+  /* MECCANISMO D'AZIONE */
+  .mechanism {
+    background: white;
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 15px 40px -25px rgba(45, 42, 38, 0.12);
+    margin-top: 2rem;
+  }
+  .mechanism-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: -0.3px;
+  }
+  .mechanism-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    position: relative;
+  }
+  .mechanism-step {
+    text-align: center;
+    position: relative;
+    padding: 0 0.5rem;
+  }
+  .mechanism-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -10px;
+    top: 18px;
+    color: var(--brand-cyan);
+    font-size: 18px;
+  }
+  .step-number {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--brand-cyan-tint);
+    color: var(--brand-cyan-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
     font-weight: 500;
-    display: block;
-    margin-bottom: 2px;
+    font-size: 16px;
+    font-family: 'Playfair Display', serif;
   }
-  .feature-points span {
-    color: var(--text-secondary);
+  .step-title {
     font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+  }
+  .step-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
   }
 
   /* GALLERY */
@@ -310,10 +397,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .gallery-item {
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
     aspect-ratio: 4/5;
     background: #f5f5f5;
@@ -335,34 +422,34 @@
   }
   .duo-card {
     background: white;
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 10px 30px -15px rgba(45, 42, 38, 0.12);
+    border-radius: 20px;
+    padding: 2.25rem;
+    box-shadow: 0 12px 35px -18px rgba(45, 42, 38, 0.15);
   }
   .duo-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
     background: var(--brand-cyan-tint);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
   .duo-icon i {
-    font-size: 24px;
+    font-size: 26px;
     color: var(--brand-cyan-dark);
   }
   .duo-label {
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     color: var(--text-tertiary);
     margin-bottom: 0.5rem;
     font-weight: 500;
   }
   .duo-title {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 400;
     letter-spacing: -0.3px;
     margin-bottom: 0.75rem;
@@ -370,7 +457,7 @@
   .duo-desc {
     font-size: 14px;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.75;
     margin-bottom: 1.5rem;
   }
   .duo-meta {
@@ -392,57 +479,57 @@
     color: var(--brand-cyan-dark);
   }
 
-  /* PERKS BAND */
-  .perks-band {
+  /* PARTNER BAND */
+  .partner-band {
     background: white;
     border-top: 1px solid var(--warm-border);
     border-bottom: 1px solid var(--warm-border);
-    padding: 3rem 1.5rem;
-    margin-top: 2rem;
+    padding: 4rem 1.5rem;
   }
-  .perks-grid {
-    max-width: 900px;
+  .partner-grid {
+    max-width: 1000px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 2.5rem;
   }
-  .perk {
+  .partner-item {
     text-align: center;
   }
-  .perk-icon {
-    width: 56px;
-    height: 56px;
+  .partner-icon {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: var(--brand-cyan-tint);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.25rem;
   }
-  .perk-icon i {
-    font-size: 28px;
+  .partner-icon i {
+    font-size: 30px;
     color: var(--brand-cyan-dark);
   }
-  .perk-title {
-    font-size: 15px;
+  .partner-title {
+    font-size: 17px;
     font-weight: 500;
-    margin-bottom: 4px;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.2px;
   }
-  .perk-desc {
-    font-size: 13px;
+  .partner-desc {
+    font-size: 14px;
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
-  /* CONTACT SECTION */
+  /* CONTACT */
   .contact {
-    padding: 5rem 1.5rem;
+    padding: 5rem 1.5rem 4rem;
     background: linear-gradient(180deg, var(--warm-bg) 0%, #f0ece3 100%);
     text-align: center;
   }
   .contact-inner {
-    max-width: 600px;
+    max-width: 640px;
     margin: 0 auto;
   }
   .contact-eyebrow {
@@ -454,11 +541,11 @@
     margin-bottom: 1rem;
   }
   .contact-title {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 400;
     letter-spacing: -0.5px;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    line-height: 1.15;
   }
   .contact-text {
     font-size: 16px;
@@ -473,47 +560,78 @@
     background: var(--brand-cyan);
     color: white;
     text-decoration: none;
-    padding: 1.1rem 2rem;
+    padding: 1.15rem 2.25rem;
     border-radius: 50px;
     font-size: 16px;
     font-weight: 500;
-    box-shadow: 0 15px 30px -10px rgba(0, 179, 230, 0.4);
+    box-shadow: 0 18px 35px -10px rgba(0, 179, 230, 0.45);
     transition: all 0.25s ease;
   }
   .whatsapp-btn:hover {
     background: var(--brand-cyan-dark);
     transform: translateY(-2px);
-    box-shadow: 0 20px 40px -10px rgba(0, 179, 230, 0.5);
+    box-shadow: 0 22px 45px -10px rgba(0, 179, 230, 0.55);
   }
   .whatsapp-btn i { font-size: 22px; }
-  .contact-phone {
-    margin-top: 1.5rem;
+
+  .contact-secondary {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
     font-size: 13px;
-    color: var(--text-tertiary);
-    letter-spacing: 0.5px;
+    color: var(--text-secondary);
   }
+  .contact-secondary a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+  }
+  .contact-secondary a:hover { color: var(--brand-cyan-dark); }
+  .contact-secondary i { font-size: 16px; color: var(--brand-cyan); }
 
   /* FOOTER */
   .footer {
     background: var(--brand-grey);
-    color: rgba(255,255,255,0.7);
-    padding: 2.5rem 1.5rem;
+    color: rgba(255,255,255,0.75);
+    padding: 3rem 1.5rem 2rem;
     text-align: center;
   }
   .footer-logo {
-    height: 28px;
-    opacity: 0.85;
-    margin-bottom: 1rem;
+    height: 32px;
+    margin-bottom: 1.25rem;
     filter: brightness(0) invert(1);
+    opacity: 0.9;
   }
-  .footer-text {
+  .footer-tagline {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: rgba(255,255,255,0.6);
+  }
+  .footer-address {
     font-size: 12px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     line-height: 1.8;
+    margin-top: 1.25rem;
+    color: rgba(255,255,255,0.65);
   }
-  .footer-text a {
+  .footer-address a {
     color: white;
     text-decoration: none;
+  }
+  .footer-bottom {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.5px;
   }
 
   /* RESPONSIVE */
@@ -525,13 +643,15 @@
     .feature-image { aspect-ratio: 16/10; }
     .feature-content { padding: 2.5rem 2rem; }
     .feature-title { font-size: 30px; }
+    .mechanism { padding: 2rem 1.5rem; }
+    .mechanism-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; }
+    .mechanism-step:not(:last-child)::after { display: none; }
     .duo { grid-template-columns: 1fr; }
     .gallery { grid-template-columns: 1fr; }
-    .perks-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .section-title, .contact-title { font-size: 28px; }
-    .intro-text { font-size: 18px; }
-    .section { padding: 3rem 1rem; }
-    .intro { padding: 3rem 1rem 2rem; }
+    .partner-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .section-title, .contact-title { font-size: 30px; }
+    .promise-claim { font-size: 24px; }
+    .section { padding: 3.5rem 1rem; }
   }
   @media (max-width: 480px) {
     .topbar { padding: 0.75rem 1rem; }
@@ -540,8 +660,8 @@
     .hero-title { font-size: 30px; }
     .feature-content { padding: 2rem 1.5rem; }
     .feature-title { font-size: 26px; }
-    .duo-card { padding: 1.5rem; }
-    .whatsapp-btn { padding: 1rem 1.5rem; font-size: 15px; }
+    .duo-card { padding: 1.75rem; }
+    .whatsapp-btn { padding: 1rem 1.75rem; font-size: 15px; }
   }
 </style>
 </head>
@@ -550,7 +670,7 @@
 <!-- TOPBAR -->
 <header class="topbar">
   <div class="topbar-inner">
-    <img src="assets/logo-skinem.jpg" alt="Skinem" class="logo-img">
+    <img src="assets/logo-skinem.jpg" alt="Skinem Beauty Technology" class="logo-img">
     <div class="topbar-right">Maggio 2026</div>
   </div>
 </header>
@@ -560,75 +680,93 @@
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-eyebrow">Le proposte del mese</div>
-      <h1 class="hero-title serif">La tecnologia che <em>trasforma</em> il tuo centro estetico.</h1>
-      <p class="hero-lead">Soluzioni professionali pensate per chi conosce questo mestiere. Ti lascio queste pagine perché tu possa scoprire con calma le novità che ho selezionato per te.</p>
+      <h1 class="hero-title serif">La nuova tecnologia che libera dal grasso <em>senza bisturi</em>, in soli 30 giorni.</h1>
+      <p class="hero-lead">Lipolaser è il sistema Skinem che rimodella la silhouette in modo mirato, non invasivo, senza tempi di recupero. Una proposta che oggi voglio condividere con te.</p>
       <div class="hero-meta">
         <div class="hero-meta-item">
           <i class="ti ti-shield-check" aria-hidden="true"></i>
           <span>Tecnologia certificata</span>
         </div>
         <div class="hero-meta-item">
+          <i class="ti ti-medal" aria-hidden="true"></i>
+          <span>Made in Italy</span>
+        </div>
+        <div class="hero-meta-item">
           <i class="ti ti-heart-handshake" aria-hidden="true"></i>
-          <span>Assistenza dedicata</span>
+          <span>Partner dal 2019</span>
         </div>
       </div>
     </div>
     <div class="hero-image">
-      <img src="assets/hero-repolaser.jpg" alt="Trattamento Repo Laser">
+      <img src="assets/hero-lipolaser.jpg" alt="Trattamento Lipolaser Skinem">
     </div>
   </div>
 </section>
 
-<!-- INTRO -->
-<section class="intro">
-  <div class="intro-inner">
-    <div class="intro-label">Skinem · Una promessa</div>
-    <p class="intro-text">Da chi vive questo mondo ogni giorno, una proposta pensata su misura per la <strong>professionista che vuole davvero fare la differenza</strong> nel proprio centro.</p>
+<!-- PROMISE -->
+<section class="promise">
+  <div class="promise-inner">
+    <div class="promise-eyebrow">Skinem · Una promessa</div>
+    <p class="promise-claim serif">Da chi conosce questo mestiere, una proposta pensata per la professionista che vuole davvero <strong>fare la differenza</strong> in cabina.</p>
   </div>
 </section>
 
-<!-- REPO LASER FEATURE -->
-<section class="section" style="padding-top: 1rem;">
+<!-- LIPOLASER FEATURE -->
+<section class="section">
   <div class="wrapper">
 
     <div class="section-header">
       <div class="section-eyebrow">Tecnologia di punta</div>
-      <h2 class="section-title serif">Repo Laser</h2>
-      <p class="section-subtitle">Il sistema che sta cambiando il modo di fare risultato in cabina.</p>
+      <h2 class="section-title serif">Lipolaser</h2>
+      <p class="section-subtitle">Riduzione mirata, rassodamento, rimodellamento della silhouette. Senza bisturi, senza tempi di recupero.</p>
     </div>
 
     <div class="feature">
       <div class="feature-grid">
         <div class="feature-image">
-          <img src="assets/repolaser-application.jpg" alt="Applicazione Repo Laser">
+          <img src="assets/lipolaser-application.jpg" alt="Applicazione Lipolaser su gambe e glutei">
         </div>
         <div class="feature-content">
           <span class="feature-tag">Esclusiva Skinem</span>
-          <h3 class="feature-title serif">Risultati visibili, protocolli semplici.</h3>
-          <p class="feature-desc">[Descrizione tecnica del Repo Laser: principio di funzionamento, indicazioni cliniche principali, target di clientela. Inserire 3-4 righe che raccontino il valore reale per il centro estetico — risultato sulla cliente, tempo di seduta, facilità d'uso.]</p>
-          <ul class="feature-points">
-            <li>
-              <i class="ti ti-target" aria-hidden="true"></i>
-              <div>
-                <strong>Risultati misurabili</strong>
-                <span>Visibili già dalle prime sedute</span>
-              </div>
-            </li>
-            <li>
-              <i class="ti ti-clock" aria-hidden="true"></i>
-              <div>
-                <strong>Protocollo rapido</strong>
-                <span>Seduta tipo di 40 minuti</span>
-              </div>
-            </li>
-            <li>
-              <i class="ti ti-trending-up" aria-hidden="true"></i>
-              <div>
-                <strong>Ritorno d'investimento</strong>
-                <span>Recupero in pochi mesi di attività</span>
-              </div>
-            </li>
+          <div class="feature-headline">Risultati in 30 giorni</div>
+          <h3 class="feature-title serif">Una valida alternativa alla <em>liposuzione</em>.</h3>
+          <p class="feature-desc">Attraverso la posa delle placche, le onde luminose cedono energia per ridurre i centimetri in eccesso in modo mirato e localizzato. I tempi di applicazione sono rapidi e il trattamento è adatto a tutti i tipi di pelle, comprese quelle scure e sensibili.</p>
+          <ul class="benefits">
+            <li><i class="ti ti-check" aria-hidden="true"></i>Effetto lipolitico rassodante</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i>Aumenta la produzione di collagene</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i>Accelera gli scambi metabolici</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i>Funziona su tutti i tipi di cellulite</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i>Combatte i segni di cedimento</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i>Rimodellamento della silhouette</li>
           </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- MECCANISMO D'AZIONE -->
+    <div class="mechanism">
+      <div class="section-eyebrow" style="text-align: center; margin-bottom: 0.5rem;">Meccanismo d'azione</div>
+      <h3 class="mechanism-title serif">Come agisce la luce sull'adipocita</h3>
+      <div class="mechanism-grid">
+        <div class="mechanism-step">
+          <div class="step-number">1</div>
+          <div class="step-title">Stimolazione luminosa</div>
+          <div class="step-desc">L'energia laser raggiunge il tessuto adiposo in profondità.</div>
+        </div>
+        <div class="mechanism-step">
+          <div class="step-number">2</div>
+          <div class="step-title">Pori transitori</div>
+          <div class="step-desc">Si formano sulle membrane degli adipociti, restando aperti fino a 72 ore.</div>
+        </div>
+        <div class="mechanism-step">
+          <div class="step-number">3</div>
+          <div class="step-title">Attivazione delle lipasi</div>
+          <div class="step-desc">Il calore frammenta i trigliceridi in acidi grassi e glicerolo.</div>
+        </div>
+        <div class="mechanism-step">
+          <div class="step-number">4</div>
+          <div class="step-title">Riduzione del volume</div>
+          <div class="step-desc">L'adipocita si riduce e le circonferenze del corpo con lui.</div>
         </div>
       </div>
     </div>
@@ -636,10 +774,10 @@
     <!-- GALLERY -->
     <div class="gallery">
       <div class="gallery-item">
-        <img src="assets/repolaser-detail.jpg" alt="Dettaglio applicazione professionale">
+        <img src="assets/lipolaser-detail.jpg" alt="Dettaglio applicazione professionale Skinem">
       </div>
       <div class="gallery-item">
-        <img src="assets/hero-repolaser.jpg" alt="Trattamento completo Repo Laser">
+        <img src="assets/hero-lipolaser.jpg" alt="Trattamento completo Lipolaser">
       </div>
     </div>
 
@@ -647,7 +785,7 @@
 </section>
 
 <!-- PRODUCT + TREATMENT -->
-<section class="section">
+<section class="section" style="padding-top: 2rem;">
   <div class="wrapper">
 
     <div class="section-header">
@@ -663,8 +801,8 @@
           <i class="ti ti-flask-2" aria-hidden="true"></i>
         </div>
         <div class="duo-label">Prodotto del mese</div>
-        <h3 class="duo-title serif">[Nome prodotto]</h3>
-        <p class="duo-desc">[Breve descrizione del prodotto, ingrediente attivo principale, indicazione d'uso e beneficio principale per la cliente finale.]</p>
+        <h3 class="duo-title serif">[Nome cosmetico Skinem]</h3>
+        <p class="duo-desc">[Breve descrizione: attivi antiossidanti e anti-età che stimolano i processi naturali di rigenerazione cutanea profonda. Indicazione d'uso e beneficio per la cliente.]</p>
         <div class="duo-meta">
           <span class="duo-meta-label">Prezzo professionista</span>
           <span class="duo-meta-value">€ —</span>
@@ -689,29 +827,29 @@
   </div>
 </section>
 
-<!-- PERKS BAND -->
-<section class="perks-band">
-  <div class="perks-grid">
-    <div class="perk">
-      <div class="perk-icon">
+<!-- PARTNER BAND -->
+<section class="partner-band">
+  <div class="partner-grid">
+    <div class="partner-item">
+      <div class="partner-icon">
+        <i class="ti ti-device-desktop" aria-hidden="true"></i>
+      </div>
+      <div class="partner-title">Tecnologie</div>
+      <div class="partner-desc">Innovazione, design e prestazioni uniche nel loro genere, garantite dalla nostra costante ricerca della qualità.</div>
+    </div>
+    <div class="partner-item">
+      <div class="partner-icon">
+        <i class="ti ti-droplet" aria-hidden="true"></i>
+      </div>
+      <div class="partner-title">Cosmetici</div>
+      <div class="partner-desc">Attivi antiossidanti e anti-età adatti a tutti i tipi di pelle, per una rigenerazione cutanea profonda.</div>
+    </div>
+    <div class="partner-item">
+      <div class="partner-icon">
         <i class="ti ti-school" aria-hidden="true"></i>
       </div>
-      <div class="perk-title">Formazione inclusa</div>
-      <div class="perk-desc">Affianchiamo la tua équipe fino alla piena autonomia</div>
-    </div>
-    <div class="perk">
-      <div class="perk-icon">
-        <i class="ti ti-truck-delivery" aria-hidden="true"></i>
-      </div>
-      <div class="perk-title">Consegna 48–72 ore</div>
-      <div class="perk-desc">Logistica veloce in tutta Italia, senza attese</div>
-    </div>
-    <div class="perk">
-      <div class="perk-icon">
-        <i class="ti ti-headset" aria-hidden="true"></i>
-      </div>
-      <div class="perk-title">Assistenza dedicata</div>
-      <div class="perk-desc">Un referente unico, sempre raggiungibile</div>
+      <div class="partner-title">Formazione e supporto</div>
+      <div class="partner-desc">Formazione continua e forte supporto al cliente, per un'esperienza completa e soddisfacente in cabina.</div>
     </div>
   </div>
 </section>
@@ -721,21 +859,36 @@
   <div class="contact-inner">
     <div class="contact-eyebrow">Restiamo in contatto</div>
     <h2 class="contact-title serif">Vuoi saperne di più?</h2>
-    <p class="contact-text">Scrivimi su WhatsApp per informazioni, una dimostrazione in centro o per fissare il prossimo appuntamento. Rispondo personalmente.</p>
-    <a href="https://wa.me/390000000000?text=Ciao,%20vorrei%20info%20sulle%20proposte%20Skinem%20del%20mese" class="whatsapp-btn" target="_blank" rel="noopener">
+    <p class="contact-text">Scrivimi su WhatsApp per informazioni, per una dimostrazione in centro o per fissare il prossimo appuntamento. Rispondo personalmente.</p>
+    <a href="https://wa.me/393311420033?text=Ciao,%20vorrei%20info%20sulle%20proposte%20Skinem%20del%20mese" class="whatsapp-btn" target="_blank" rel="noopener">
       <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
       <span>Scrivimi su WhatsApp</span>
     </a>
-    <div class="contact-phone">+39 000 000 0000</div>
+    <div class="contact-secondary">
+      <a href="tel:+390734511583">
+        <i class="ti ti-phone" aria-hidden="true"></i>
+        <span>+39 0734 511 583</span>
+      </a>
+      <a href="https://www.skinem.it" target="_blank" rel="noopener">
+        <i class="ti ti-world" aria-hidden="true"></i>
+        <span>skinem.it</span>
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
   <img src="assets/logo-skinem.jpg" alt="Skinem" class="footer-logo">
-  <div class="footer-text">
-    Soluzioni professionali per il centro estetico<br>
-    <a href="https://skinem.it">skinem.it</a>
+  <div class="footer-tagline">Beauty Technology · Made in Italy</div>
+  <div class="footer-address">
+    <strong>SKINEM GROUP</strong><br>
+    Via Palermo, 25 · 63822 Porto San Giorgio (FM) · Italia<br>
+    Tel. +39 0734 511 583 · Mob. +39 331 142 0033<br>
+    <a href="https://www.skinemgroup.com" target="_blank" rel="noopener">skinemgroup.com</a> · <a href="https://www.skinem.it" target="_blank" rel="noopener">skinem.it</a>
+  </div>
+  <div class="footer-bottom">
+    © Skinem Group · Soluzione esclusiva nel mondo dell'estetica professionale
   </div>
 </footer>
 
