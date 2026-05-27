@@ -479,6 +479,182 @@
     color: var(--brand-cyan-dark);
   }
 
+  /* BENDAGGI SECTION */
+  .bendaggi-hero {
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 20px 50px -25px rgba(45, 42, 38, 0.18);
+    margin-bottom: 2rem;
+  }
+  .bendaggi-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .bendaggi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .bendaggio-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+    box-shadow: 0 10px 25px -15px rgba(45, 42, 38, 0.12);
+    position: relative;
+    overflow: hidden;
+  }
+  .bendaggio-color {
+    height: 4px;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+  .bendaggio-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+  }
+  .bendaggio-effect {
+    font-size: 12px;
+    color: var(--brand-cyan-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  .bendaggio-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* PROMO BOX */
+  .promo-box {
+    background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-cyan-dark) 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 25px 50px -20px rgba(0, 179, 230, 0.4);
+    margin-bottom: 1.5rem;
+  }
+  .promo-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+  .promo-title {
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.5px;
+  }
+  .promo-title strong {
+    font-weight: 500;
+  }
+  .promo-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1.75rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .promo-meta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .promo-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.95);
+  }
+  .promo-meta-item i {
+    font-size: 18px;
+    color: white;
+  }
+
+  /* PROVA CTA */
+  .prova-cta {
+    background: white;
+    border: 2px dashed var(--brand-cyan);
+    border-radius: 20px;
+    padding: 2rem;
+  }
+  .prova-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .prova-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--brand-cyan-tint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .prova-icon i {
+    font-size: 30px;
+    color: var(--brand-cyan-dark);
+  }
+  .prova-text { flex: 1; }
+  .prova-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
+  }
+  .prova-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .prova-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brand-cyan);
+    color: white;
+    text-decoration: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 10px 20px -8px rgba(0, 179, 230, 0.4);
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+  }
+  .prova-btn:hover {
+    background: var(--brand-cyan-dark);
+    transform: translateY(-2px);
+  }
+  .prova-btn i { font-size: 18px; }
+
   /* PARTNER BAND */
   .partner-band {
     background: white;
@@ -647,6 +823,11 @@
     .mechanism-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; }
     .mechanism-step:not(:last-child)::after { display: none; }
     .duo { grid-template-columns: 1fr; }
+    .bendaggi-grid { grid-template-columns: 1fr 1fr; }
+    .promo-title { font-size: 28px; }
+    .promo-box { padding: 2rem 1.5rem; }
+    .prova-content { flex-direction: column; text-align: center; gap: 1rem; }
+    .prova-btn { width: 100%; justify-content: center; }
     .gallery { grid-template-columns: 1fr; }
     .partner-grid { grid-template-columns: 1fr; gap: 2rem; }
     .section-title, .contact-title { font-size: 30px; }
@@ -661,6 +842,9 @@
     .feature-content { padding: 2rem 1.5rem; }
     .feature-title { font-size: 26px; }
     .duo-card { padding: 1.75rem; }
+    .bendaggi-grid { grid-template-columns: 1fr; }
+    .promo-title { font-size: 24px; }
+    .promo-meta { gap: 1rem; flex-direction: column; align-items: center; }
     .whatsapp-btn { padding: 1rem 1.75rem; font-size: 15px; }
   }
 </style>
@@ -784,44 +968,90 @@
   </div>
 </section>
 
-<!-- PRODUCT + TREATMENT -->
+<!-- PRODOTTO DEL MESE: BENDAGGI -->
 <section class="section" style="padding-top: 2rem;">
   <div class="wrapper">
 
     <div class="section-header">
-      <div class="section-eyebrow">Selezione del mese</div>
-      <h2 class="section-title serif">Prodotto e trattamento</h2>
-      <p class="section-subtitle">Due proposte scelte con cura per portare novità in cabina questo mese.</p>
+      <div class="section-eyebrow">Prodotto del mese · Promozione esclusiva</div>
+      <h2 class="section-title serif">Bendaggi Skinem</h2>
+      <p class="section-subtitle">Quattro formule professionali per ogni esigenza della cabina: tonificare, snellire, drenare, ridurre.</p>
     </div>
 
-    <div class="duo">
+    <!-- IMMAGINE BENDAGGI -->
+    <div class="bendaggi-hero">
+      <img src="assets/bendaggi-skinem.jpg" alt="I quattro bendaggi Skinem: Tone Active, Thermo Slim, Drain Active, Fosfa Slim">
+    </div>
 
-      <div class="duo-card">
-        <div class="duo-icon">
-          <i class="ti ti-flask-2" aria-hidden="true"></i>
-        </div>
-        <div class="duo-label">Prodotto del mese</div>
-        <h3 class="duo-title serif">[Nome cosmetico Skinem]</h3>
-        <p class="duo-desc">[Breve descrizione: attivi antiossidanti e anti-età che stimolano i processi naturali di rigenerazione cutanea profonda. Indicazione d'uso e beneficio per la cliente.]</p>
-        <div class="duo-meta">
-          <span class="duo-meta-label">Prezzo professionista</span>
-          <span class="duo-meta-value">€ —</span>
-        </div>
+    <!-- LE 4 FORMULE -->
+    <div class="bendaggi-grid">
+
+      <div class="bendaggio-card">
+        <div class="bendaggio-color" style="background: #B589D6;"></div>
+        <div class="bendaggio-name">Tone Active</div>
+        <div class="bendaggio-effect">Effetto tonificante idratante</div>
+        <div class="bendaggio-desc">Acido jaluronico, centella, equiseto e bardana. Stimola fibroblasti e rigenera la pelle.</div>
       </div>
 
-      <div class="duo-card">
-        <div class="duo-icon">
-          <i class="ti ti-sparkles" aria-hidden="true"></i>
-        </div>
-        <div class="duo-label">Trattamento del mese</div>
-        <h3 class="duo-title serif">[Nome trattamento]</h3>
-        <p class="duo-desc">[Protocollo della seduta, target di clientela, risultato atteso e perché funziona in cabina questo mese.]</p>
-        <div class="duo-meta">
-          <span class="duo-meta-label">Durata seduta</span>
-          <span class="duo-meta-value">— min</span>
-        </div>
+      <div class="bendaggio-card">
+        <div class="bendaggio-color" style="background: #E84B3C;"></div>
+        <div class="bendaggio-name">Thermo Slim</div>
+        <div class="bendaggio-effect">Effetto termico snellente</div>
+        <div class="bendaggio-desc">Composto iodato, estratti di capsico e ortica. Stimola il metabolismo localizzato su cellulite e adipe.</div>
       </div>
 
+      <div class="bendaggio-card">
+        <div class="bendaggio-color" style="background: #4FC3E8;"></div>
+        <div class="bendaggio-name">Drain Active</div>
+        <div class="bendaggio-effect">Effetto drenante</div>
+        <div class="bendaggio-desc">Sale del Mar Morto a saturazione e composto iodato. Specifico per ritenzione idrica.</div>
+      </div>
+
+      <div class="bendaggio-card">
+        <div class="bendaggio-color" style="background: #F5C73F;"></div>
+        <div class="bendaggio-name">Fosfa Slim</div>
+        <div class="bendaggio-effect">Effetto riducente</div>
+        <div class="bendaggio-desc">Fosfatidilcolina, ginepro, menta e ginseng. Contrasta cellulite e pannicoli adiposi localizzati.</div>
+      </div>
+
+    </div>
+
+    <!-- OFFERTA PROMO -->
+    <div class="promo-box">
+      <div class="promo-badge">Promozione di Maggio</div>
+      <div class="promo-title serif">48 bendaggi a soli <strong>€ 450</strong></div>
+      <div class="promo-desc">A libera scelta tra le quattro formule. Componi il kit perfetto per la tua cabina.</div>
+      <div class="promo-meta">
+        <div class="promo-meta-item">
+          <i class="ti ti-package" aria-hidden="true"></i>
+          <span>48 bendaggi · 2 per busta</span>
+        </div>
+        <div class="promo-meta-item">
+          <i class="ti ti-adjustments" aria-hidden="true"></i>
+          <span>Mix libero delle 4 formule</span>
+        </div>
+        <div class="promo-meta-item">
+          <i class="ti ti-clock" aria-hidden="true"></i>
+          <span>30 minuti di posa</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BENDAGGIO IN PROVA CTA -->
+    <div class="prova-cta">
+      <div class="prova-content">
+        <div class="prova-icon">
+          <i class="ti ti-gift" aria-hidden="true"></i>
+        </div>
+        <div class="prova-text">
+          <div class="prova-title">Vuoi provarli prima?</div>
+          <div class="prova-desc">Richiedi un bendaggio di prova gratuito. Lo porto direttamente in centro.</div>
+        </div>
+        <a href="https://wa.me/393311420033?text=Ciao!%20Vorrei%20richiedere%20un%20bendaggio%20Skinem%20in%20prova.%20Quale%20formula%20mi%20consigli%3F" class="prova-btn" target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+          <span>Richiedi prova gratuita</span>
+        </a>
+      </div>
     </div>
 
   </div>
