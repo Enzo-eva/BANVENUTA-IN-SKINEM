@@ -194,7 +194,7 @@
 
   /* PROMO */
   .promo-box { background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-cyan-dark) 100%); border-radius: 20px; padding: 2.5rem; text-align: center; color: white; box-shadow: 0 25px 50px -20px rgba(0,179,230,0.4); margin-bottom: 1.5rem; }
-  .promo-badge { display: inline-block; background: rgba(255,255,255,0.2); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; padding: 6px 14px; border-radius: 20px; margin-bottom: 1rem; }
+  .promo-badge { display: inline-block; background: rgba(255,255,255,0.2); font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; padding: 10px 20px; border-radius: 30px; margin-bottom: 1.25rem; border: 1px solid rgba(255,255,255,0.4); }
   .promo-title { font-size: 36px; font-weight: 400; line-height: 1.2; margin-bottom: 0.75rem; letter-spacing: -0.5px; }
   .promo-title strong { font-weight: 500; }
   .promo-desc { font-size: 15px; color: rgba(255,255,255,0.9); margin-bottom: 1.75rem; max-width: 460px; margin-left: auto; margin-right: auto; }
@@ -210,8 +210,8 @@
   .prova-text { flex: 1; }
   .prova-title { font-size: 17px; font-weight: 500; margin-bottom: 4px; }
   .prova-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
-  .prova-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--brand-cyan); color: white; text-decoration: none; padding: 0.85rem 1.4rem; border-radius: 50px; font-size: 14px; font-weight: 500; white-space: nowrap; box-shadow: 0 10px 20px -8px rgba(0,179,230,0.4); transition: all 0.25s ease; flex-shrink: 0; }
-  .prova-btn:hover { background: var(--brand-cyan-dark); transform: translateY(-2px); }
+  .prova-btn { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: white; text-decoration: none; padding: 0.85rem 1.4rem; border-radius: 50px; font-size: 14px; font-weight: 500; white-space: nowrap; box-shadow: 0 10px 20px -8px rgba(37,211,102,0.4); transition: all 0.25s ease; flex-shrink: 0; }
+  .prova-btn:hover { background: #1da851; transform: translateY(-2px); }
   .prova-btn i { font-size: 18px; }
 
   /* PARTNER BAND */
@@ -223,14 +223,142 @@
   .partner-title { font-size: 17px; font-weight: 500; margin-bottom: 0.5rem; }
   .partner-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
 
+  /* PROVA DENTRO PROMO */
+  .promo-prova {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .promo-prova-testo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.95);
+    text-align: left;
+    flex: 1;
+  }
+  .promo-prova-testo i { font-size: 22px; flex-shrink: 0; }
+  .prova-btn { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: white; text-decoration: none; padding: 0.85rem 1.4rem; border-radius: 50px; font-size: 14px; font-weight: 500; white-space: nowrap; box-shadow: 0 10px 20px -8px rgba(37,211,102,0.5); transition: all 0.25s ease; flex-shrink: 0; }
+  .prova-btn:hover { background: #1da851; transform: translateY(-2px); }
+  .prova-btn i { font-size: 18px; }
+
+  /* SKINNATE ANNUNCIO */
+  .skinnate-annuncio {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2a26 100%);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -20px rgba(45,42,38,0.35);
+  }
+  .skinnate-image {
+    background: linear-gradient(135deg, #E8F8FC, #b8e8f5);
+    overflow: hidden;
+    min-height: 420px;
+  }
+  .skinnate-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .skinnate-content { padding: 3rem 3rem 3rem 2.5rem; }
+  .skinnate-eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--brand-cyan);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .skinnate-title {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.4px;
+    color: white;
+  }
+  .skinnate-title em { font-style: italic; color: var(--brand-cyan); }
+  .skinnate-lead {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+  }
+  .skinnate-numeri {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.07);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .skinnate-numero { text-align: center; }
+  .skinnate-numero-val {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--brand-cyan);
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .skinnate-numero-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    line-height: 1.3;
+  }
+  .skinnate-incluso { margin-bottom: 2rem; }
+  .skinnate-incluso-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .skinnate-perk {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .skinnate-perk i { color: var(--brand-cyan); font-size: 17px; flex-shrink: 0; }
+  .skinnate-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.75rem;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 12px 25px -8px rgba(37,211,102,0.5);
+    transition: all 0.25s ease;
+    margin-top: 0.5rem;
+  }
+  .skinnate-cta:hover { background: #1da851; transform: translateY(-2px); }
+  .skinnate-cta i { font-size: 20px; }
+
   /* CONTACT */
   .contact { padding: 5rem 1.5rem 4rem; background: linear-gradient(180deg, var(--warm-bg) 0%, #f0ece3 100%); text-align: center; }
   .contact-inner { max-width: 640px; margin: 0 auto; }
   .contact-eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--brand-cyan-dark); font-weight: 500; margin-bottom: 1rem; }
   .contact-title { font-size: 40px; font-weight: 400; letter-spacing: -0.5px; margin-bottom: 1.25rem; line-height: 1.15; }
   .contact-text { font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2.5rem; }
-  .whatsapp-btn { display: inline-flex; align-items: center; gap: 12px; background: var(--brand-cyan); color: white; text-decoration: none; padding: 1.15rem 2.25rem; border-radius: 50px; font-size: 16px; font-weight: 500; box-shadow: 0 18px 35px -10px rgba(0,179,230,0.45); transition: all 0.25s ease; }
-  .whatsapp-btn:hover { background: var(--brand-cyan-dark); transform: translateY(-2px); }
+  .whatsapp-btn { display: inline-flex; align-items: center; gap: 12px; background: #25D366; color: white; text-decoration: none; padding: 1.15rem 2.25rem; border-radius: 50px; font-size: 16px; font-weight: 500; box-shadow: 0 18px 35px -10px rgba(37,211,102,0.45); transition: all 0.25s ease; }
+  .whatsapp-btn:hover { background: #1da851; transform: translateY(-2px); }
   .whatsapp-btn i { font-size: 22px; }
   .contact-secondary { margin-top: 1.75rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; font-size: 13px; color: var(--text-secondary); }
   .contact-secondary a { color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
@@ -260,7 +388,14 @@
     .bendaggi-grid { grid-template-columns: 1fr 1fr; }
     .promo-box { padding: 2rem 1.5rem; }
     .promo-title { font-size: 28px; }
-    .prova-content { flex-direction: column; text-align: center; }
+    .skinnate-annuncio { grid-template-columns: 1fr; }
+    .skinnate-image { min-height: 220px; }
+    .skinnate-content { padding: 2rem 1.5rem; }
+    .skinnate-title { font-size: 26px; }
+    .skinnate-numeri { grid-template-columns: repeat(3,1fr); gap: 0.5rem; padding: 1rem; }
+    .skinnate-numero-val { font-size: 22px; }
+    .skinnate-cta { width: 100%; justify-content: center; }
+    .promo-prova { flex-direction: column; align-items: flex-start; }
     .prova-btn { width: 100%; justify-content: center; }
     .partner-grid { grid-template-columns: 1fr; gap: 2rem; }
     .section-title { font-size: 30px; }
@@ -387,10 +522,6 @@
         </div>
       </div>
     </div>
-    <div class="gallery">
-      <div class="gallery-item"><img src="assets/lipolaser-detail.jpg" alt="Dettaglio applicazione Lipolaser"></div>
-      <div class="gallery-item"><img src="assets/hero-lipolaser.jpg" alt="Trattamento Lipolaser"></div>
-    </div>
   </div>
 </section>
 
@@ -431,6 +562,8 @@
         <div class="bendaggio-desc">Fosfatidilcolina, ginepro, menta e ginseng.</div>
       </div>
     </div>
+
+    <!-- PROMO BOX CON PROVA DENTRO -->
     <div class="promo-box">
       <div class="promo-badge">Promozione di Maggio</div>
       <div class="promo-title serif">48 bendaggi a soli <strong>€ 450</strong></div>
@@ -440,40 +573,65 @@
         <div class="promo-meta-item"><i class="ti ti-adjustments"></i><span>Mix libero delle 4 formule</span></div>
         <div class="promo-meta-item"><i class="ti ti-clock"></i><span>30 minuti di posa</span></div>
       </div>
-    </div>
-    <div class="prova-cta">
-      <div class="prova-content">
-        <div class="prova-icon"><i class="ti ti-gift"></i></div>
-        <div class="prova-text">
-          <div class="prova-title">Vuoi provarli prima?</div>
-          <div class="prova-desc">Richiedimi un bendaggio in prova gratuito, lo porto direttamente in centro.</div>
+      <!-- PROVA DENTRO IL BANNER -->
+      <div class="promo-prova">
+        <div class="promo-prova-testo">
+          <i class="ti ti-gift"></i>
+          <span>Vuoi provarli prima? Richiedimi un bendaggio in prova gratuito.</span>
         </div>
         <a href="https://wa.me/393460356595?text=Ciao%20Enzo!%20Vorrei%20richiedere%20un%20bendaggio%20Skinem%20in%20prova.%20Quale%20formula%20mi%20consigli%3F" class="prova-btn" target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i><span>Richiedi prova gratuita</span>
         </a>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- PARTNER BAND -->
-<section class="partner-band">
-  <div class="partner-grid">
-    <div class="partner-item">
-      <div class="partner-icon"><i class="ti ti-device-desktop"></i></div>
-      <div class="partner-title">Tecnologie</div>
-      <div class="partner-desc">Innovazione, design e prestazioni uniche, garantite dalla costante ricerca della qualità.</div>
+<!-- SKINNATE PARTNERSHIP -->
+<section class="section" style="padding-top:1rem; background: white; border-top: 1px solid var(--warm-border);">
+  <div class="wrapper">
+
+    <div class="skinnate-annuncio">
+      <div class="skinnate-image">
+        <img src="assets/skinnate.jpg" alt="Penna microneedling Skinnate" onerror="this.style.display='none'">
+      </div>
+      <div class="skinnate-content">
+        <div class="skinnate-eyebrow">Opportunità per il tuo centro</div>
+        <h2 class="skinnate-title serif">Diventa centro autorizzato <em>Skinnate</em>.</h2>
+        <p class="skinnate-lead">Il microneedling è il trattamento viso più richiesto del momento. Con la penna Skinnate puoi offrirlo nel tuo centro con un protocollo professionale certificato, formazione inclusa e margini elevati.</p>
+
+        <div class="skinnate-numeri">
+          <div class="skinnate-numero">
+            <div class="skinnate-numero-val">€150+</div>
+            <div class="skinnate-numero-label">Valore medio seduta</div>
+          </div>
+          <div class="skinnate-numero">
+            <div class="skinnate-numero-val">45'</div>
+            <div class="skinnate-numero-label">Durata trattamento</div>
+          </div>
+          <div class="skinnate-numero">
+            <div class="skinnate-numero-val">100%</div>
+            <div class="skinnate-numero-label">Formazione inclusa</div>
+          </div>
+        </div>
+
+        <div class="skinnate-incluso">
+          <div class="skinnate-incluso-title">Cosa include la partnership</div>
+          <div class="skinnate-perk"><i class="ti ti-check"></i><span>Penna microneedling professionale certificata</span></div>
+          <div class="skinnate-perk"><i class="ti ti-check"></i><span>Protocollo viso anti-età e rigenerante</span></div>
+          <div class="skinnate-perk"><i class="ti ti-check"></i><span>Formazione in centro con il nostro team</span></div>
+          <div class="skinnate-perk"><i class="ti ti-check"></i><span>Materiali di comunicazione per le tue clienti</span></div>
+          <div class="skinnate-perk"><i class="ti ti-check"></i><span>Supporto continuo Skinem</span></div>
+        </div>
+
+        <a href="https://wa.me/393460356595?text=Ciao%20Enzo!%20Sono%20interessata%20a%20diventare%20centro%20autorizzato%20Skinnate%20per%20il%20microneedling." class="skinnate-cta" target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp"></i>
+          <span>Voglio diventare centro autorizzato</span>
+        </a>
+      </div>
     </div>
-    <div class="partner-item">
-      <div class="partner-icon"><i class="ti ti-droplet"></i></div>
-      <div class="partner-title">Cosmetici</div>
-      <div class="partner-desc">Attivi antiossidanti e anti-età adatti a tutti i tipi di pelle, per una rigenerazione profonda.</div>
-    </div>
-    <div class="partner-item">
-      <div class="partner-icon"><i class="ti ti-school"></i></div>
-      <div class="partner-title">Formazione e supporto</div>
-      <div class="partner-desc">Formazione continua e supporto dedicato per ogni fase della collaborazione.</div>
-    </div>
+
   </div>
 </section>
 
