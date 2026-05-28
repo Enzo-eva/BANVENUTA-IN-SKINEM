@@ -11,20 +11,17 @@
 <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --brand-grey: #575756;
     --brand-cyan: #00B3E6;
     --brand-cyan-dark: #0095C2;
     --brand-cyan-tint: #E8F8FC;
     --warm-bg: #FBF9F5;
-    --warm-card: #FFFFFF;
     --warm-border: #EDE8DF;
     --text-primary: #2D2A26;
     --text-secondary: #6B6864;
     --text-tertiary: #9C9892;
   }
-
   html, body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--warm-bg);
@@ -32,7 +29,6 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-
   .serif { font-family: 'Playfair Display', Georgia, serif; }
 
   /* TOP BAR */
@@ -40,51 +36,73 @@
     background: rgba(255,255,255,0.95);
     border-bottom: 1px solid var(--warm-border);
     padding: 1rem 1.5rem;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    position: sticky; top: 0; z-index: 10;
     backdrop-filter: blur(8px);
   }
   .topbar-inner {
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo-img { height: 36px; width: auto; display: block; }
+  .topbar-right { font-size: 12px; color: var(--text-tertiary); letter-spacing: 0.5px; text-transform: uppercase; }
+
+  /* SALUTO */
+  .saluto {
+    min-height: 100svh;
+    background: linear-gradient(160deg, #f4f1ea 0%, #e8e3d8 100%);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
   }
-  .logo-img {
-    height: 36px;
-    width: auto;
-    display: block;
+  .saluto::after {
+    content: '';
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(180deg, var(--brand-cyan) 0%, transparent 100%);
   }
-  .topbar-right {
-    font-size: 12px;
-    color: var(--text-tertiary);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-  .made-in-italy {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+  .saluto-inner { max-width: 560px; }
+  .saluto-eyebrow {
     font-size: 11px;
-    letter-spacing: 1px;
-    color: var(--text-tertiary);
     text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--brand-cyan-dark);
+    font-weight: 500;
+    margin-bottom: 2.5rem;
   }
-  .flag {
-    display: inline-flex;
-    gap: 1px;
+  .saluto-text {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(32px, 7vw, 52px);
+    line-height: 1.2;
+    color: var(--text-primary);
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 2.5rem;
   }
-  .flag span {
-    display: inline-block;
-    width: 8px;
-    height: 4px;
+  .saluto-text em {
+    font-style: italic;
+    color: var(--brand-cyan-dark);
   }
-  .flag .green { background: #009246; }
-  .flag .white { background: #f1f2f1; }
-  .flag .red { background: #ce2b37; }
+  .saluto-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--brand-cyan);
+    margin: 0 auto 2rem;
+  }
+  .saluto-firma {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+  }
+  .saluto-firma strong { color: var(--text-primary); font-weight: 500; }
 
   /* HERO */
   .hero {
@@ -93,765 +111,178 @@
     overflow: hidden;
   }
   .hero-inner {
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 1100px; margin: 0 auto;
     padding: 4.5rem 1.5rem 4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5rem;
-    align-items: center;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;
   }
-  .hero-text { z-index: 2; }
   .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--brand-cyan-dark);
-    font-weight: 500;
-    margin-bottom: 1.5rem;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--brand-cyan-dark); font-weight: 500; margin-bottom: 1.5rem;
   }
-  .hero-eyebrow::before {
-    content: '';
-    width: 24px;
-    height: 1px;
-    background: var(--brand-cyan);
-  }
+  .hero-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--brand-cyan); }
   .hero-title {
-    font-size: 52px;
-    line-height: 1.05;
-    font-weight: 400;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.8px;
+    font-size: 48px; line-height: 1.05; font-weight: 400;
+    margin-bottom: 1.5rem; letter-spacing: -0.8px;
   }
-  .hero-title em {
-    font-style: italic;
-    color: var(--brand-cyan-dark);
-  }
-  .hero-lead {
-    font-size: 17px;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    max-width: 480px;
-  }
-  .hero-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1.5rem;
-    font-size: 13px;
-    color: var(--text-tertiary);
-  }
-  .hero-meta-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .hero-meta-item i {
-    font-size: 16px;
-    color: var(--brand-cyan);
-  }
-  .hero-image {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 35px 70px -25px rgba(45, 42, 38, 0.3);
-    aspect-ratio: 4/3;
-    background: #f5f5f5;
-  }
-  .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+  .hero-title em { font-style: italic; color: var(--brand-cyan-dark); }
+  .hero-lead { font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; max-width: 480px; }
+  .hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; font-size: 13px; color: var(--text-tertiary); }
+  .hero-meta-item { display: flex; align-items: center; gap: 6px; }
+  .hero-meta-item i { font-size: 16px; color: var(--brand-cyan); }
+  .hero-image { border-radius: 20px; overflow: hidden; box-shadow: 0 35px 70px -25px rgba(45,42,38,0.3); aspect-ratio: 1050/1350; background: #f5f5f5; }
+  .hero-image video { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 20px; }
 
-  /* CONTENT WRAPPER */
-  .wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
+  /* PROMISE */
+  .promise { background: white; padding: 4rem 1.5rem; text-align: center; border-bottom: 1px solid var(--warm-border); }
+  .promise-inner { max-width: 780px; margin: 0 auto; }
+  .promise-eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--brand-cyan-dark); font-weight: 500; margin-bottom: 1rem; }
+  .promise-claim { font-size: 28px; line-height: 1.3; color: var(--text-primary); font-weight: 400; letter-spacing: -0.3px; }
+  .promise-claim strong { font-weight: 500; color: var(--brand-cyan-dark); }
 
-  /* PROMISE BANNER */
-  .promise {
-    background: white;
-    padding: 4rem 1.5rem;
-    text-align: center;
-    border-bottom: 1px solid var(--warm-border);
-  }
-  .promise-inner {
-    max-width: 780px;
-    margin: 0 auto;
-  }
-  .promise-eyebrow {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--brand-cyan-dark);
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
-  .promise-claim {
-    font-size: 32px;
-    line-height: 1.25;
-    color: var(--text-primary);
-    font-weight: 400;
-    letter-spacing: -0.5px;
-  }
-  .promise-claim strong {
-    font-weight: 500;
-    color: var(--brand-cyan-dark);
-  }
+  /* WRAPPER */
+  .wrapper { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
   /* SECTION */
-  .section {
-    padding: 5rem 1.5rem 4rem;
-  }
-  .section-header {
-    text-align: center;
-    margin-bottom: 3.5rem;
-  }
-  .section-eyebrow {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    color: var(--brand-cyan-dark);
-    font-weight: 500;
-    margin-bottom: 0.75rem;
-  }
-  .section-title {
-    font-size: 42px;
-    font-weight: 400;
-    color: var(--text-primary);
-    letter-spacing: -0.6px;
-    line-height: 1.15;
-  }
-  .section-subtitle {
-    font-size: 17px;
-    color: var(--text-secondary);
-    margin-top: 1rem;
-    max-width: 580px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  .section { padding: 5rem 1.5rem 4rem; }
+  .section-header { text-align: center; margin-bottom: 3.5rem; }
+  .section-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 2.5px; color: var(--brand-cyan-dark); font-weight: 500; margin-bottom: 0.75rem; }
+  .section-title { font-size: 42px; font-weight: 400; letter-spacing: -0.6px; line-height: 1.15; }
+  .section-subtitle { font-size: 17px; color: var(--text-secondary); margin-top: 1rem; max-width: 580px; margin-left: auto; margin-right: auto; }
 
   /* LIPOLASER FEATURE */
-  .feature {
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 25px 60px -30px rgba(45, 42, 38, 0.18);
-    margin-bottom: 1.5rem;
-  }
-  .feature-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .feature-image {
-    background: #f5f5f5;
-    aspect-ratio: 4/5;
-    overflow: hidden;
-  }
-  .feature-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .feature-content {
-    padding: 3.5rem 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .feature-tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--brand-cyan-dark);
-    background: var(--brand-cyan-tint);
-    padding: 6px 12px;
-    border-radius: 20px;
-    margin-bottom: 1.25rem;
-    align-self: flex-start;
-  }
-  .feature-headline {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-tertiary);
-    margin-bottom: 0.75rem;
-    font-weight: 500;
-  }
-  .feature-title {
-    font-size: 38px;
-    font-weight: 400;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    letter-spacing: -0.5px;
-  }
-  .feature-title em {
-    font-style: italic;
-    color: var(--brand-cyan-dark);
-  }
-  .feature-desc {
-    font-size: 15px;
-    color: var(--text-secondary);
-    line-height: 1.75;
-    margin-bottom: 2rem;
-  }
+  .feature { background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 60px -30px rgba(45,42,38,0.18); margin-bottom: 1.5rem; }
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; }
+  .feature-image { background: #f5f5f5; aspect-ratio: 4/5; overflow: hidden; }
+  .feature-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .feature-content { padding: 3.5rem 3rem; display: flex; flex-direction: column; justify-content: center; }
+  .feature-tag { display: inline-block; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; color: var(--brand-cyan-dark); background: var(--brand-cyan-tint); padding: 6px 12px; border-radius: 20px; margin-bottom: 1.25rem; align-self: flex-start; }
+  .feature-headline { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-tertiary); margin-bottom: 0.75rem; font-weight: 500; }
+  .feature-title { font-size: 36px; font-weight: 400; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.5px; }
+  .feature-title em { font-style: italic; color: var(--brand-cyan-dark); }
+  .feature-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 2rem; }
+  .benefits { list-style: none; }
+  .benefits li { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid var(--warm-border); font-size: 14px; font-weight: 500; }
+  .benefits li:last-child { border-bottom: 1px solid var(--warm-border); }
+  .benefits i { color: var(--brand-cyan); font-size: 18px; flex-shrink: 0; }
 
-  /* BENEFITS LIST */
-  .benefits {
-    list-style: none;
-    margin-bottom: 0;
-  }
-  .benefits li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 0;
-    border-top: 1px solid var(--warm-border);
-    font-size: 14px;
-    color: var(--text-primary);
-    font-weight: 500;
-  }
-  .benefits li:last-child {
-    border-bottom: 1px solid var(--warm-border);
-  }
-  .benefits i {
-    color: var(--brand-cyan);
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-
-  /* MECCANISMO D'AZIONE */
-  .mechanism {
-    background: white;
-    border-radius: 24px;
-    padding: 3rem;
-    box-shadow: 0 15px 40px -25px rgba(45, 42, 38, 0.12);
-    margin-top: 2rem;
-  }
-  .mechanism-title {
-    font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    letter-spacing: -0.3px;
-  }
-  .mechanism-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-top: 2rem;
-    position: relative;
-  }
-  .mechanism-step {
-    text-align: center;
-    position: relative;
-    padding: 0 0.5rem;
-  }
-  .mechanism-step:not(:last-child)::after {
-    content: '→';
-    position: absolute;
-    right: -10px;
-    top: 18px;
-    color: var(--brand-cyan);
-    font-size: 18px;
-  }
-  .step-number {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--brand-cyan-tint);
-    color: var(--brand-cyan-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    font-weight: 500;
-    font-size: 16px;
-    font-family: 'Playfair Display', serif;
-  }
-  .step-title {
-    font-size: 13px;
-    font-weight: 500;
-    margin-bottom: 0.4rem;
-    color: var(--text-primary);
-  }
-  .step-desc {
-    font-size: 12px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-  }
+  /* MECCANISMO */
+  .mechanism { background: white; border-radius: 24px; padding: 3rem; box-shadow: 0 15px 40px -25px rgba(45,42,38,0.12); margin-top: 2rem; }
+  .mechanism-title { font-size: 24px; font-weight: 400; margin-bottom: 1.5rem; text-align: center; }
+  .mechanism-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 2rem; position: relative; }
+  .mechanism-step { text-align: center; position: relative; padding: 0 0.5rem; }
+  .mechanism-step:not(:last-child)::after { content: '→'; position: absolute; right: -10px; top: 18px; color: var(--brand-cyan); font-size: 18px; }
+  .step-number { width: 44px; height: 44px; border-radius: 50%; background: var(--brand-cyan-tint); color: var(--brand-cyan-dark); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 500; font-size: 16px; font-family: 'Playfair Display', serif; }
+  .step-title { font-size: 13px; font-weight: 500; margin-bottom: 0.4rem; }
+  .step-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
 
   /* GALLERY */
-  .gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-  .gallery-item {
-    border-radius: 16px;
-    overflow: hidden;
-    aspect-ratio: 4/5;
-    background: #f5f5f5;
-  }
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-  }
+  .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+  .gallery-item { border-radius: 16px; overflow: hidden; aspect-ratio: 4/5; background: #f5f5f5; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
   .gallery-item:hover img { transform: scale(1.03); }
 
-  /* PRODUCT + TREATMENT */
-  .duo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-  .duo-card {
-    background: white;
-    border-radius: 20px;
-    padding: 2.25rem;
-    box-shadow: 0 12px 35px -18px rgba(45, 42, 38, 0.15);
-  }
-  .duo-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: var(--brand-cyan-tint);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-  }
-  .duo-icon i {
-    font-size: 26px;
-    color: var(--brand-cyan-dark);
-  }
-  .duo-label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-tertiary);
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-  .duo-title {
-    font-size: 26px;
-    font-weight: 400;
-    letter-spacing: -0.3px;
-    margin-bottom: 0.75rem;
-  }
-  .duo-desc {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.75;
-    margin-bottom: 1.5rem;
-  }
-  .duo-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--warm-border);
-  }
-  .duo-meta-label {
-    font-size: 12px;
-    color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-  }
-  .duo-meta-value {
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--brand-cyan-dark);
-  }
+  /* BENDAGGI */
+  .bendaggi-hero { border-radius: 20px; overflow: hidden; background: white; box-shadow: 0 20px 50px -25px rgba(45,42,38,0.18); margin-bottom: 2rem; }
+  .bendaggi-hero img { width: 100%; height: auto; display: block; }
+  .bendaggi-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0.75rem; margin-bottom: 2.5rem; }
+  .bendaggio-card { background: white; border-radius: 14px; padding: 1.25rem 1rem; box-shadow: 0 10px 25px -15px rgba(45,42,38,0.12); }
+  .bendaggio-color { height: 4px; border-radius: 2px; margin-bottom: 0.85rem; }
+  .bendaggio-name { font-size: 15px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px; }
+  .bendaggio-effect { font-size: 11px; color: var(--brand-cyan-dark); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; margin-bottom: 0.6rem; }
+  .bendaggio-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
 
-  /* BENDAGGI SECTION */
-  .bendaggi-hero {
-    border-radius: 20px;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 20px 50px -25px rgba(45, 42, 38, 0.18);
-    margin-bottom: 2rem;
-  }
-  .bendaggi-hero img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .bendaggi-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-  }
-  .bendaggio-card {
-    background: white;
-    border-radius: 16px;
-    padding: 1.5rem 1.25rem;
-    box-shadow: 0 10px 25px -15px rgba(45, 42, 38, 0.12);
-    position: relative;
-    overflow: hidden;
-  }
-  .bendaggio-color {
-    height: 4px;
-    border-radius: 2px;
-    margin-bottom: 1rem;
-  }
-  .bendaggio-name {
-    font-family: 'Inter', sans-serif;
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-    color: var(--text-primary);
-  }
-  .bendaggio-effect {
-    font-size: 12px;
-    color: var(--brand-cyan-dark);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 500;
-    margin-bottom: 0.75rem;
-  }
-  .bendaggio-desc {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
-  /* PROMO BOX */
-  .promo-box {
-    background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-cyan-dark) 100%);
-    border-radius: 20px;
-    padding: 2.5rem;
-    text-align: center;
-    color: white;
-    box-shadow: 0 25px 50px -20px rgba(0, 179, 230, 0.4);
-    margin-bottom: 1.5rem;
-  }
-  .promo-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.2);
-    color: white;
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    margin-bottom: 1rem;
-  }
-  .promo-title {
-    font-size: 38px;
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.5px;
-  }
-  .promo-title strong {
-    font-weight: 500;
-  }
-  .promo-desc {
-    font-size: 15px;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 1.75rem;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .promo-meta {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.2);
-  }
-  .promo-meta-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: rgba(255,255,255,0.95);
-  }
-  .promo-meta-item i {
-    font-size: 18px;
-    color: white;
-  }
+  /* PROMO */
+  .promo-box { background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-cyan-dark) 100%); border-radius: 20px; padding: 2.5rem; text-align: center; color: white; box-shadow: 0 25px 50px -20px rgba(0,179,230,0.4); margin-bottom: 1.5rem; }
+  .promo-badge { display: inline-block; background: rgba(255,255,255,0.2); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; padding: 6px 14px; border-radius: 20px; margin-bottom: 1rem; }
+  .promo-title { font-size: 36px; font-weight: 400; line-height: 1.2; margin-bottom: 0.75rem; letter-spacing: -0.5px; }
+  .promo-title strong { font-weight: 500; }
+  .promo-desc { font-size: 15px; color: rgba(255,255,255,0.9); margin-bottom: 1.75rem; max-width: 460px; margin-left: auto; margin-right: auto; }
+  .promo-meta { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.25rem 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.2); }
+  .promo-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+  .promo-meta-item i { font-size: 18px; }
 
   /* PROVA CTA */
-  .prova-cta {
-    background: white;
-    border: 2px dashed var(--brand-cyan);
-    border-radius: 20px;
-    padding: 2rem;
-  }
-  .prova-content {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  .prova-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--brand-cyan-tint);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .prova-icon i {
-    font-size: 30px;
-    color: var(--brand-cyan-dark);
-  }
+  .prova-cta { background: white; border: 2px dashed var(--brand-cyan); border-radius: 20px; padding: 1.75rem; }
+  .prova-content { display: flex; align-items: center; gap: 1.5rem; }
+  .prova-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--brand-cyan-tint); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .prova-icon i { font-size: 28px; color: var(--brand-cyan-dark); }
   .prova-text { flex: 1; }
-  .prova-title {
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 4px;
-    letter-spacing: -0.2px;
-  }
-  .prova-desc {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-  }
-  .prova-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--brand-cyan);
-    color: white;
-    text-decoration: none;
-    padding: 0.9rem 1.5rem;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 500;
-    white-space: nowrap;
-    box-shadow: 0 10px 20px -8px rgba(0, 179, 230, 0.4);
-    transition: all 0.25s ease;
-    flex-shrink: 0;
-  }
-  .prova-btn:hover {
-    background: var(--brand-cyan-dark);
-    transform: translateY(-2px);
-  }
+  .prova-title { font-size: 17px; font-weight: 500; margin-bottom: 4px; }
+  .prova-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+  .prova-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--brand-cyan); color: white; text-decoration: none; padding: 0.85rem 1.4rem; border-radius: 50px; font-size: 14px; font-weight: 500; white-space: nowrap; box-shadow: 0 10px 20px -8px rgba(0,179,230,0.4); transition: all 0.25s ease; flex-shrink: 0; }
+  .prova-btn:hover { background: var(--brand-cyan-dark); transform: translateY(-2px); }
   .prova-btn i { font-size: 18px; }
 
   /* PARTNER BAND */
-  .partner-band {
-    background: white;
-    border-top: 1px solid var(--warm-border);
-    border-bottom: 1px solid var(--warm-border);
-    padding: 4rem 1.5rem;
-  }
-  .partner-grid {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-  }
-  .partner-item {
-    text-align: center;
-  }
-  .partner-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--brand-cyan-tint);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.25rem;
-  }
-  .partner-icon i {
-    font-size: 30px;
-    color: var(--brand-cyan-dark);
-  }
-  .partner-title {
-    font-size: 17px;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.2px;
-  }
-  .partner-desc {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
+  .partner-band { background: white; border-top: 1px solid var(--warm-border); border-bottom: 1px solid var(--warm-border); padding: 4rem 1.5rem; }
+  .partner-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 2.5rem; }
+  .partner-item { text-align: center; }
+  .partner-icon { width: 60px; height: 60px; border-radius: 50%; background: var(--brand-cyan-tint); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; }
+  .partner-icon i { font-size: 30px; color: var(--brand-cyan-dark); }
+  .partner-title { font-size: 17px; font-weight: 500; margin-bottom: 0.5rem; }
+  .partner-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
 
   /* CONTACT */
-  .contact {
-    padding: 5rem 1.5rem 4rem;
-    background: linear-gradient(180deg, var(--warm-bg) 0%, #f0ece3 100%);
-    text-align: center;
-  }
-  .contact-inner {
-    max-width: 640px;
-    margin: 0 auto;
-  }
-  .contact-eyebrow {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--brand-cyan-dark);
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
-  .contact-title {
-    font-size: 40px;
-    font-weight: 400;
-    letter-spacing: -0.5px;
-    margin-bottom: 1.25rem;
-    line-height: 1.15;
-  }
-  .contact-text {
-    font-size: 16px;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-  }
-  .whatsapp-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--brand-cyan);
-    color: white;
-    text-decoration: none;
-    padding: 1.15rem 2.25rem;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 500;
-    box-shadow: 0 18px 35px -10px rgba(0, 179, 230, 0.45);
-    transition: all 0.25s ease;
-  }
-  .whatsapp-btn:hover {
-    background: var(--brand-cyan-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 22px 45px -10px rgba(0, 179, 230, 0.55);
-  }
+  .contact { padding: 5rem 1.5rem 4rem; background: linear-gradient(180deg, var(--warm-bg) 0%, #f0ece3 100%); text-align: center; }
+  .contact-inner { max-width: 640px; margin: 0 auto; }
+  .contact-eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--brand-cyan-dark); font-weight: 500; margin-bottom: 1rem; }
+  .contact-title { font-size: 40px; font-weight: 400; letter-spacing: -0.5px; margin-bottom: 1.25rem; line-height: 1.15; }
+  .contact-text { font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2.5rem; }
+  .whatsapp-btn { display: inline-flex; align-items: center; gap: 12px; background: var(--brand-cyan); color: white; text-decoration: none; padding: 1.15rem 2.25rem; border-radius: 50px; font-size: 16px; font-weight: 500; box-shadow: 0 18px 35px -10px rgba(0,179,230,0.45); transition: all 0.25s ease; }
+  .whatsapp-btn:hover { background: var(--brand-cyan-dark); transform: translateY(-2px); }
   .whatsapp-btn i { font-size: 22px; }
-
-  .contact-secondary {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    font-size: 13px;
-    color: var(--text-secondary);
-  }
-  .contact-secondary a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: color 0.2s ease;
-  }
-  .contact-secondary a:hover { color: var(--brand-cyan-dark); }
+  .contact-secondary { margin-top: 1.75rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; font-size: 13px; color: var(--text-secondary); }
+  .contact-secondary a { color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
   .contact-secondary i { font-size: 16px; color: var(--brand-cyan); }
 
   /* FOOTER */
-  .footer {
-    background: var(--brand-grey);
-    color: rgba(255,255,255,0.75);
-    padding: 3rem 1.5rem 2rem;
-    text-align: center;
-  }
-  .footer-logo {
-    height: 32px;
-    margin-bottom: 1.25rem;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-  }
-  .footer-tagline {
-    font-size: 13px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    color: rgba(255,255,255,0.6);
-  }
-  .footer-address {
-    font-size: 12px;
-    letter-spacing: 0.3px;
-    line-height: 1.8;
-    margin-top: 1.25rem;
-    color: rgba(255,255,255,0.65);
-  }
-  .footer-address a {
-    color: white;
-    text-decoration: none;
-  }
-  .footer-bottom {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 11px;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 0.5px;
-  }
+  .footer { background: var(--brand-grey); color: rgba(255,255,255,0.75); padding: 3rem 1.5rem 2rem; text-align: center; }
+  .footer-logo-text { font-family: 'Playfair Display', serif; font-size: 28px; letter-spacing: 2px; color: white; opacity: 0.9; margin-bottom: 0.5rem; }
+  .footer-tagline { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1.25rem; }
+  .footer-address { font-size: 12px; line-height: 1.8; color: rgba(255,255,255,0.65); }
+  .footer-address a { color: white; text-decoration: none; }
+  .footer-bottom { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.5px; }
 
   /* RESPONSIVE */
   @media (max-width: 820px) {
     .hero-inner { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 2.5rem; }
-    .hero-title { font-size: 36px; }
+    .hero-title { font-size: 34px; }
     .hero-image { order: -1; }
     .feature-grid { grid-template-columns: 1fr; }
     .feature-image { aspect-ratio: 16/10; }
     .feature-content { padding: 2.5rem 2rem; }
-    .feature-title { font-size: 30px; }
-    .mechanism { padding: 2rem 1.5rem; }
-    .mechanism-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; }
+    .feature-title { font-size: 28px; }
+    .mechanism-grid { grid-template-columns: 1fr 1fr; }
     .mechanism-step:not(:last-child)::after { display: none; }
-    .duo { grid-template-columns: 1fr; }
-    .bendaggi-grid { grid-template-columns: 1fr 1fr; }
-    .promo-title { font-size: 28px; }
-    .promo-box { padding: 2rem 1.5rem; }
-    .prova-content { flex-direction: column; text-align: center; gap: 1rem; }
-    .prova-btn { width: 100%; justify-content: center; }
+    .mechanism { padding: 2rem 1.5rem; }
     .gallery { grid-template-columns: 1fr; }
+    .bendaggi-grid { grid-template-columns: 1fr 1fr; }
+    .promo-box { padding: 2rem 1.5rem; }
+    .promo-title { font-size: 28px; }
+    .prova-content { flex-direction: column; text-align: center; }
+    .prova-btn { width: 100%; justify-content: center; }
     .partner-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .section-title, .contact-title { font-size: 30px; }
-    .promise-claim { font-size: 24px; }
+    .section-title { font-size: 30px; }
+    .contact-title { font-size: 28px; }
     .section { padding: 3.5rem 1rem; }
+    .promise { padding: 3rem 1.25rem; }
+    .promise-claim { font-size: 22px; }
   }
   @media (max-width: 480px) {
     .topbar { padding: 0.75rem 1rem; }
     .logo-img { height: 28px; }
-    .topbar-right { font-size: 11px; }
-    .hero-title { font-size: 30px; }
+    .hero-title { font-size: 28px; }
     .feature-content { padding: 2rem 1.5rem; }
-    .feature-title { font-size: 26px; }
-    .duo-card { padding: 1.75rem; }
     .bendaggi-grid { grid-template-columns: 1fr; }
-    .promo-title { font-size: 24px; }
-    .promo-meta { gap: 1rem; flex-direction: column; align-items: center; }
+    .promo-meta { flex-direction: column; align-items: center; }
     .whatsapp-btn { padding: 1rem 1.75rem; font-size: 15px; }
   }
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
+<!-- TOP BAR -->
 <header class="topbar">
   <div class="topbar-inner">
     <img src="assets/logo-skinem.jpg" alt="Skinem Beauty Technology" class="logo-img">
@@ -859,30 +290,36 @@
   </div>
 </header>
 
+<!-- SALUTO -->
+<section class="saluto">
+  <div class="saluto-inner">
+    <div class="saluto-eyebrow">Skinem · Beauty Technology</div>
+    <p class="saluto-text">Buongiorno.<br>Sono Enzo, il suo riferimento <em>Skinem</em> per la zona.<br>Le lascio queste pagine per conoscere con calma le nostre proposte.</p>
+    <div class="saluto-divider"></div>
+    <div class="saluto-firma">
+      <strong>Enzo</strong> · Riferimento commerciale<br>
+      +39 346 035 6595 · skinem.it
+    </div>
+  </div>
+</section>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-eyebrow">Le proposte del mese</div>
       <h1 class="hero-title serif">La nuova tecnologia che libera dal grasso <em>senza bisturi</em>, in soli 30 giorni.</h1>
-      <p class="hero-lead">Lipolaser è il sistema Skinem che rimodella la silhouette in modo mirato, non invasivo, senza tempi di recupero. Una proposta che oggi voglio condividere con te.</p>
+      <p class="hero-lead">Lipolaser è il sistema Skinem che rimodella la silhouette in modo mirato, non invasivo, senza tempi di recupero.</p>
       <div class="hero-meta">
-        <div class="hero-meta-item">
-          <i class="ti ti-shield-check" aria-hidden="true"></i>
-          <span>Tecnologia certificata</span>
-        </div>
-        <div class="hero-meta-item">
-          <i class="ti ti-medal" aria-hidden="true"></i>
-          <span>Made in Italy</span>
-        </div>
-        <div class="hero-meta-item">
-          <i class="ti ti-heart-handshake" aria-hidden="true"></i>
-          <span>Partner dal 2019</span>
-        </div>
+        <div class="hero-meta-item"><i class="ti ti-shield-check"></i><span>Tecnologia certificata</span></div>
+        <div class="hero-meta-item"><i class="ti ti-medal"></i><span>Made in Italy</span></div>
+        <div class="hero-meta-item"><i class="ti ti-heart-handshake"></i><span>Dal 2019</span></div>
       </div>
     </div>
     <div class="hero-image">
-      <img src="assets/hero-lipolaser.jpg" alt="Trattamento Lipolaser Skinem">
+      <video autoplay muted loop playsinline poster="assets/hero-lipolaser.jpg">
+        <source src="assets/lipolaser-compressed.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
@@ -895,41 +332,37 @@
   </div>
 </section>
 
-<!-- LIPOLASER FEATURE -->
+<!-- LIPOLASER -->
 <section class="section">
   <div class="wrapper">
-
     <div class="section-header">
       <div class="section-eyebrow">Tecnologia di punta</div>
       <h2 class="section-title serif">Lipolaser</h2>
       <p class="section-subtitle">Riduzione mirata, rassodamento, rimodellamento della silhouette. Senza bisturi, senza tempi di recupero.</p>
     </div>
-
     <div class="feature">
       <div class="feature-grid">
         <div class="feature-image">
-          <img src="assets/lipolaser-application.jpg" alt="Applicazione Lipolaser su gambe e glutei">
+          <img src="assets/lipolaser-application.jpg" alt="Applicazione Lipolaser">
         </div>
         <div class="feature-content">
           <span class="feature-tag">Esclusiva Skinem</span>
           <div class="feature-headline">Risultati in 30 giorni</div>
           <h3 class="feature-title serif">Una valida alternativa alla <em>liposuzione</em>.</h3>
-          <p class="feature-desc">Attraverso la posa delle placche, le onde luminose cedono energia per ridurre i centimetri in eccesso in modo mirato e localizzato. I tempi di applicazione sono rapidi e il trattamento è adatto a tutti i tipi di pelle, comprese quelle scure e sensibili.</p>
+          <p class="feature-desc">Attraverso la posa delle placche, le onde luminose cedono energia per ridurre i centimetri in eccesso in modo mirato e localizzato. Adatto a tutti i tipi di pelle, comprese quelle scure e sensibili.</p>
           <ul class="benefits">
-            <li><i class="ti ti-check" aria-hidden="true"></i>Effetto lipolitico rassodante</li>
-            <li><i class="ti ti-check" aria-hidden="true"></i>Aumenta la produzione di collagene</li>
-            <li><i class="ti ti-check" aria-hidden="true"></i>Accelera gli scambi metabolici</li>
-            <li><i class="ti ti-check" aria-hidden="true"></i>Funziona su tutti i tipi di cellulite</li>
-            <li><i class="ti ti-check" aria-hidden="true"></i>Combatte i segni di cedimento</li>
-            <li><i class="ti ti-check" aria-hidden="true"></i>Rimodellamento della silhouette</li>
+            <li><i class="ti ti-check"></i>Effetto lipolitico rassodante</li>
+            <li><i class="ti ti-check"></i>Aumenta la produzione di collagene</li>
+            <li><i class="ti ti-check"></i>Accelera gli scambi metabolici</li>
+            <li><i class="ti ti-check"></i>Funziona su tutti i tipi di cellulite</li>
+            <li><i class="ti ti-check"></i>Combatte i segni di cedimento</li>
+            <li><i class="ti ti-check"></i>Rimodellamento della silhouette</li>
           </ul>
         </div>
       </div>
     </div>
-
-    <!-- MECCANISMO D'AZIONE -->
     <div class="mechanism">
-      <div class="section-eyebrow" style="text-align: center; margin-bottom: 0.5rem;">Meccanismo d'azione</div>
+      <div class="section-eyebrow" style="text-align:center;margin-bottom:0.5rem;">Meccanismo d'azione</div>
       <h3 class="mechanism-title serif">Come agisce la luce sull'adipocita</h3>
       <div class="mechanism-grid">
         <div class="mechanism-step">
@@ -954,106 +387,72 @@
         </div>
       </div>
     </div>
-
-    <!-- GALLERY -->
     <div class="gallery">
-      <div class="gallery-item">
-        <img src="assets/lipolaser-detail.jpg" alt="Dettaglio applicazione professionale Skinem">
-      </div>
-      <div class="gallery-item">
-        <img src="assets/hero-lipolaser.jpg" alt="Trattamento completo Lipolaser">
-      </div>
+      <div class="gallery-item"><img src="assets/lipolaser-detail.jpg" alt="Dettaglio applicazione Lipolaser"></div>
+      <div class="gallery-item"><img src="assets/hero-lipolaser.jpg" alt="Trattamento Lipolaser"></div>
     </div>
-
   </div>
 </section>
 
-<!-- PRODOTTO DEL MESE: BENDAGGI -->
-<section class="section" style="padding-top: 2rem;">
+<!-- BENDAGGI -->
+<section class="section" style="padding-top:2rem;">
   <div class="wrapper">
-
     <div class="section-header">
-      <div class="section-eyebrow">Prodotto del mese · Promozione esclusiva</div>
+      <div class="section-eyebrow">Promozione del mese</div>
       <h2 class="section-title serif">Bendaggi Skinem</h2>
-      <p class="section-subtitle">Quattro formule professionali per ogni esigenza della cabina: tonificare, snellire, drenare, ridurre.</p>
+      <p class="section-subtitle">Quattro formule professionali: tonificare, snellire, drenare, ridurre.</p>
     </div>
-
-    <!-- IMMAGINE BENDAGGI -->
     <div class="bendaggi-hero">
-      <img src="assets/bendaggi-skinem.jpg" alt="I quattro bendaggi Skinem: Tone Active, Thermo Slim, Drain Active, Fosfa Slim">
+      <img src="assets/bendaggi-skinem.jpg" alt="I quattro bendaggi Skinem">
     </div>
-
-    <!-- LE 4 FORMULE -->
     <div class="bendaggi-grid">
-
       <div class="bendaggio-card">
-        <div class="bendaggio-color" style="background: #B589D6;"></div>
+        <div class="bendaggio-color" style="background:#B589D6;"></div>
         <div class="bendaggio-name">Tone Active</div>
-        <div class="bendaggio-effect">Effetto tonificante idratante</div>
-        <div class="bendaggio-desc">Acido jaluronico, centella, equiseto e bardana. Stimola fibroblasti e rigenera la pelle.</div>
+        <div class="bendaggio-effect">Tonificante idratante</div>
+        <div class="bendaggio-desc">Acido jaluronico, centella, equiseto e bardana.</div>
       </div>
-
       <div class="bendaggio-card">
-        <div class="bendaggio-color" style="background: #E84B3C;"></div>
+        <div class="bendaggio-color" style="background:#E84B3C;"></div>
         <div class="bendaggio-name">Thermo Slim</div>
-        <div class="bendaggio-effect">Effetto termico snellente</div>
-        <div class="bendaggio-desc">Composto iodato, estratti di capsico e ortica. Stimola il metabolismo localizzato su cellulite e adipe.</div>
+        <div class="bendaggio-effect">Termico snellente</div>
+        <div class="bendaggio-desc">Composto iodato, capsico e ortica. Per cellulite e adipe.</div>
       </div>
-
       <div class="bendaggio-card">
-        <div class="bendaggio-color" style="background: #4FC3E8;"></div>
+        <div class="bendaggio-color" style="background:#4FC3E8;"></div>
         <div class="bendaggio-name">Drain Active</div>
-        <div class="bendaggio-effect">Effetto drenante</div>
-        <div class="bendaggio-desc">Sale del Mar Morto a saturazione e composto iodato. Specifico per ritenzione idrica.</div>
+        <div class="bendaggio-effect">Drenante</div>
+        <div class="bendaggio-desc">Sale del Mar Morto a saturazione. Per ritenzione idrica.</div>
       </div>
-
       <div class="bendaggio-card">
-        <div class="bendaggio-color" style="background: #F5C73F;"></div>
+        <div class="bendaggio-color" style="background:#F5C73F;"></div>
         <div class="bendaggio-name">Fosfa Slim</div>
-        <div class="bendaggio-effect">Effetto riducente</div>
-        <div class="bendaggio-desc">Fosfatidilcolina, ginepro, menta e ginseng. Contrasta cellulite e pannicoli adiposi localizzati.</div>
+        <div class="bendaggio-effect">Riducente</div>
+        <div class="bendaggio-desc">Fosfatidilcolina, ginepro, menta e ginseng.</div>
       </div>
-
     </div>
-
-    <!-- OFFERTA PROMO -->
     <div class="promo-box">
       <div class="promo-badge">Promozione di Maggio</div>
       <div class="promo-title serif">48 bendaggi a soli <strong>€ 450</strong></div>
       <div class="promo-desc">A libera scelta tra le quattro formule. Componi il kit perfetto per la tua cabina.</div>
       <div class="promo-meta">
-        <div class="promo-meta-item">
-          <i class="ti ti-package" aria-hidden="true"></i>
-          <span>48 bendaggi · 2 per busta</span>
-        </div>
-        <div class="promo-meta-item">
-          <i class="ti ti-adjustments" aria-hidden="true"></i>
-          <span>Mix libero delle 4 formule</span>
-        </div>
-        <div class="promo-meta-item">
-          <i class="ti ti-clock" aria-hidden="true"></i>
-          <span>30 minuti di posa</span>
-        </div>
+        <div class="promo-meta-item"><i class="ti ti-package"></i><span>48 bendaggi · 2 per busta</span></div>
+        <div class="promo-meta-item"><i class="ti ti-adjustments"></i><span>Mix libero delle 4 formule</span></div>
+        <div class="promo-meta-item"><i class="ti ti-clock"></i><span>30 minuti di posa</span></div>
       </div>
     </div>
-
-    <!-- BENDAGGIO IN PROVA CTA -->
     <div class="prova-cta">
       <div class="prova-content">
-        <div class="prova-icon">
-          <i class="ti ti-gift" aria-hidden="true"></i>
-        </div>
+        <div class="prova-icon"><i class="ti ti-gift"></i></div>
         <div class="prova-text">
           <div class="prova-title">Vuoi provarli prima?</div>
-          <div class="prova-desc">Richiedi un bendaggio di prova gratuito. Lo porto direttamente in centro.</div>
+          <div class="prova-desc">Richiedimi un bendaggio in prova gratuito, lo porto direttamente in centro.</div>
         </div>
-        <a href="https://wa.me/393311420033?text=Ciao!%20Vorrei%20richiedere%20un%20bendaggio%20Skinem%20in%20prova.%20Quale%20formula%20mi%20consigli%3F" class="prova-btn" target="_blank" rel="noopener">
-          <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
-          <span>Richiedi prova gratuita</span>
+        <a href="https://wa.me/393460356595?text=Ciao%20Enzo!%20Vorrei%20richiedere%20un%20bendaggio%20Skinem%20in%20prova.%20Quale%20formula%20mi%20consigli%3F" class="prova-btn" target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp"></i><span>Richiedi prova gratuita</span>
         </a>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -1061,25 +460,19 @@
 <section class="partner-band">
   <div class="partner-grid">
     <div class="partner-item">
-      <div class="partner-icon">
-        <i class="ti ti-device-desktop" aria-hidden="true"></i>
-      </div>
+      <div class="partner-icon"><i class="ti ti-device-desktop"></i></div>
       <div class="partner-title">Tecnologie</div>
-      <div class="partner-desc">Innovazione, design e prestazioni uniche nel loro genere, garantite dalla nostra costante ricerca della qualità.</div>
+      <div class="partner-desc">Innovazione, design e prestazioni uniche, garantite dalla costante ricerca della qualità.</div>
     </div>
     <div class="partner-item">
-      <div class="partner-icon">
-        <i class="ti ti-droplet" aria-hidden="true"></i>
-      </div>
+      <div class="partner-icon"><i class="ti ti-droplet"></i></div>
       <div class="partner-title">Cosmetici</div>
-      <div class="partner-desc">Attivi antiossidanti e anti-età adatti a tutti i tipi di pelle, per una rigenerazione cutanea profonda.</div>
+      <div class="partner-desc">Attivi antiossidanti e anti-età adatti a tutti i tipi di pelle, per una rigenerazione profonda.</div>
     </div>
     <div class="partner-item">
-      <div class="partner-icon">
-        <i class="ti ti-school" aria-hidden="true"></i>
-      </div>
+      <div class="partner-icon"><i class="ti ti-school"></i></div>
       <div class="partner-title">Formazione e supporto</div>
-      <div class="partner-desc">Formazione continua e forte supporto al cliente, per un'esperienza completa e soddisfacente in cabina.</div>
+      <div class="partner-desc">Formazione continua e supporto dedicato per ogni fase della collaborazione.</div>
     </div>
   </div>
 </section>
@@ -1090,36 +483,25 @@
     <div class="contact-eyebrow">Restiamo in contatto</div>
     <h2 class="contact-title serif">Vuoi saperne di più?</h2>
     <p class="contact-text">Scrivimi su WhatsApp per informazioni, per una dimostrazione in centro o per fissare il prossimo appuntamento. Rispondo personalmente.</p>
-    <a href="https://wa.me/393311420033?text=Ciao,%20vorrei%20info%20sulle%20proposte%20Skinem%20del%20mese" class="whatsapp-btn" target="_blank" rel="noopener">
-      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
-      <span>Scrivimi su WhatsApp</span>
+    <a href="https://wa.me/393460356595?text=Ciao%20Enzo,%20vorrei%20info%20sulle%20proposte%20Skinem%20del%20mese" class="whatsapp-btn" target="_blank" rel="noopener">
+      <i class="ti ti-brand-whatsapp"></i><span>Scrivimi su WhatsApp</span>
     </a>
     <div class="contact-secondary">
-      <a href="tel:+390734511583">
-        <i class="ti ti-phone" aria-hidden="true"></i>
-        <span>+39 0734 511 583</span>
-      </a>
-      <a href="https://www.skinem.it" target="_blank" rel="noopener">
-        <i class="ti ti-world" aria-hidden="true"></i>
-        <span>skinem.it</span>
-      </a>
+      <a href="tel:+393460356595"><i class="ti ti-phone"></i><span>+39 346 035 6595</span></a>
+      <a href="https://www.skinem.it" target="_blank" rel="noopener"><i class="ti ti-world"></i><span>skinem.it</span></a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <img src="assets/logo-skinem.jpg" alt="Skinem" class="footer-logo">
+  <div class="footer-logo-text">skinĒm</div>
   <div class="footer-tagline">Beauty Technology · Made in Italy</div>
   <div class="footer-address">
-    <strong>SKINEM GROUP</strong><br>
-    Via Palermo, 25 · 63822 Porto San Giorgio (FM) · Italia<br>
-    Tel. +39 0734 511 583 · Mob. +39 331 142 0033<br>
-    <a href="https://www.skinemgroup.com" target="_blank" rel="noopener">skinemgroup.com</a> · <a href="https://www.skinem.it" target="_blank" rel="noopener">skinem.it</a>
+    <strong>SKINEM GROUP</strong> · Via Palermo, 25 · 63822 Porto San Giorgio (FM)<br>
+    Enzo · +39 346 035 6595 · <a href="https://www.skinem.it" target="_blank" rel="noopener">skinem.it</a>
   </div>
-  <div class="footer-bottom">
-    © Skinem Group · Soluzione esclusiva nel mondo dell'estetica professionale
-  </div>
+  <div class="footer-bottom">© Skinem Group · Soluzione esclusiva nel mondo dell'estetica professionale</div>
 </footer>
 
 </body>
